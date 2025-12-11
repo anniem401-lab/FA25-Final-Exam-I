@@ -14,11 +14,11 @@ int main()
 
     map<string, int> airport;
     string origin;
-    string count;
+    string destination;
     int num;
-    while (file >> origin >> count) {
+    while (file >> origin >> destination) {
         airport[origin]++;
-        airport[count]++;
+        airport[destination]++;
     }
     file.close();
 
@@ -28,10 +28,17 @@ int main()
     }
 
     int trafficCountHigh = 0;
+    for (const auto& port : airport) {
+        if (port.second > trafficCountHigh) {
+            trafficCountHigh = port.second;
+        }
+    }
 
-    cout << "Busiest airport(s) 35: \n";
-    for (const auto& pair : airport) {
-        
+    cout << "\nBusiest airport(s) with " << 
+    for (const auto& port : airport) {
+        if (port.second == trafficCountHigh) {
+            cout << port.first << " " << port.second << endl;
+        }
     }
 
     return 0;
