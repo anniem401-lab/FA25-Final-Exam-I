@@ -44,13 +44,17 @@ int main()
     }
 
     trafficRange(airport, 3,8);
+    cout << endl;
+    trafficRange(airport, 9,16);
 
     return 0;
 }
 
 void trafficRange (map<string, int> airport, int low, int high) {
-    cout << "\nAirports with traffic in range:\n";
+    cout << "\nAirports with traffic in range [" << low << "," << high << "]" << endl;
     for (const auto& port : airport) {
-        
+        if (port.second >= low && port.second <= high) {
+        cout << port.first << " " << port.second << endl;
+        }
     }
 }
