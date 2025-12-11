@@ -24,7 +24,9 @@ int main()
     }
     file.close();
 
-    cout << "\nAirport Information (Airports & Traffic counts): \n";
+    cout << "\n** Airport Information **\n";
+    cout << "-----------------------------\n";
+    cout << "Airports & Traffic counts: \n";
     for (const auto& port : airport) {
         cout << port.first << " " << port.second << endl;
     }
@@ -37,6 +39,8 @@ int main()
     }
 
     cout << "\nBusiest airport(s) with " <<  trafficCountHigh << ": " << endl;
+        cout << "-----------------------------\n";
+
     for (const auto& port : airport) {
         if (port.second == trafficCountHigh) {
             cout << port.first << " " << port.second << endl;
@@ -52,6 +56,7 @@ int main()
 
 void trafficRange (map<string, int> airport, int low, int high) {
     cout << "\nAirports with traffic in range [" << low << "," << high << "]" << endl;
+        cout << "-------------------------------------\n";
     for (const auto& port : airport) {
         if (port.second >= low && port.second <= high) {
         cout << port.first << " " << port.second << endl;
