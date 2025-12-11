@@ -6,6 +6,8 @@
 #include <map>
 using namespace std;
 
+void trafficRange ();
+
 int main()
 {
     ifstream file;
@@ -22,7 +24,7 @@ int main()
     }
     file.close();
 
-    cout << "Airport Information (Airports & Traffic counts): \n";
+    cout << "\nAirport Information (Airports & Traffic counts): \n";
     for (const auto& port : airport) {
         cout << port.first << " " << port.second << endl;
     }
@@ -34,12 +36,18 @@ int main()
         }
     }
 
-    cout << "\nBusiest airport(s) with " << 
+    cout << "\nBusiest airport(s) with " <<  trafficCountHigh << ": " << endl;
     for (const auto& port : airport) {
         if (port.second == trafficCountHigh) {
             cout << port.first << " " << port.second << endl;
         }
     }
 
+    cout << "\nAirports with traffic in range [3,8]:\n";
+
     return 0;
+}
+
+void trafficRange (map<string, int> airport) {
+    cout << "";
 }
