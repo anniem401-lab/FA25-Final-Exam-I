@@ -22,9 +22,17 @@ int main()
     }
     file.close();
 
-    cout << "Airport Information: \n";
+    cout << "Airport Information (Airports & Traffic counts): \n";
     for (const auto& port : airport) {
         cout << port.first << " " << port.second << endl;
     }
+
+    int trafficCountHigh = 0;
+
+    cout << "Busiest airport(s) 35: \n";
+    for (const auto& pair : airport) {
+        
+    }
+
     return 0;
 }
