@@ -6,7 +6,7 @@
 #include <map>
 using namespace std;
 
-void trafficRange ();
+void trafficRange (map<string, int> airport, int low, int high);
 
 int main()
 {
@@ -43,11 +43,14 @@ int main()
         }
     }
 
-    cout << "\nAirports with traffic in range [3,8]:\n";
+    trafficRange(airport, 3,8);
 
     return 0;
 }
 
-void trafficRange (map<string, int> airport) {
-    cout << "";
+void trafficRange (map<string, int> airport, int low, int high) {
+    cout << "\nAirports with traffic in range:\n";
+    for (const auto& port : airport) {
+        
+    }
 }
